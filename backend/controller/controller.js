@@ -1,4 +1,4 @@
-import { getFood } from "../services/services";
+import { getFood } from "../services/services.js";
 
 export async function nutritionController(req, res) {
   const { query } = req.query;

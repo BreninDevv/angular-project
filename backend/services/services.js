@@ -3,26 +3,35 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export async function getFood(query) {
-  const response = await fetch(
-    `https://api.api-ninjas.com/v1/nutrition?query=${query}`,
-    {
-      headers: {
-        "X-Api-Key": process.env.API_KEY,
-      },
-    }
-  );
+  const API_KEY = process.env.API_KEY;
+  const url = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${API_KEY}&query=${query}&pageSize=1`;
+
+  const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error("Erro ao consumir API externa");
+    throw new Error("Erro ao consumir API do USDA");
   }
 
-  const data = await response.json();
+  const result = await response.json();
 
-  return data.map((item) => ({
-    name: item.name,
-    calories: item.calories,
-    protein: item.protein_g,
-    carbs: item.carbohydrates_total_g,
-    fat: item.fat_total_g,
-  }));
+  if (!result.foods || result.foods.length === 0) {
+    return [];
+  }
+
+  const food = result.foods[0];
+
+  const getNutrient = (id) => {
+    const nutrient = food.foodNutrients.find((n) => n.nutrientId === id);
+    return nutrient ? nutrient.value : 0;
+  };
+
+  return [
+    {
+      name: food.description,
+      calories: getNutrient(1008),
+      protein: getNutrient(1003),
+      carbs: getNutrient(1005),
+      fat: getNutrient(1004),
+    },
+  ];
 }
