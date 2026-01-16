@@ -2,9 +2,14 @@
 
 <app-background>
   <div
-    class="flex xl:flex-row lg:flex-row flex-col justify-center items-center h-full gap-y-14 lg:gap-x-8 lg:pb-20 sm:pt-20"
+    class="flex xl:flex-row lg:flex-row flex-col justify-center items-center flex-1 gap-y-10 lg:gap-x-8 pb-10 pt-32 lg:pt-20 lg:pb-20"
   >
-    <app-card><app-imc-calculator name="Cálculo IMC"></app-imc-calculator></app-card>
-    <app-card><app-nutritional-info name="Pesquisa Nutricional"></app-nutritional-info></app-card>
+    <app-card>
+      <app-imc-calculator name="Cálculo IMC"></app-imc-calculator>
+    </app-card>
+
+    <app-card>
+      <app-nutritional-info name="Pesquisa Nutricional"></app-nutritional-info>
+    </app-card>
   </div>
 </app-background>

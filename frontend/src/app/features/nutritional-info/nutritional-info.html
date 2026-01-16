@@ -1,3 +1,67 @@
-<div class="flex flex-col items-center">
-  <h1 class="text-xl font-medium text-zinc-600">{{ name() }}</h1>
+<div class="flex flex-col items-center gap-y-2">
+  <h1 class="text-2xl font-medium text-zinc-600">{{ name() }}</h1>
+  <div class="flex gap-x-2">
+    <div class="flex border-2 border-gray-300 rounded-xl gap-x-2 items-center">
+      <div>
+        <input type="text" placeholder="Ex. Banana" class="p-0.5 rounded-xl" />
+      </div>
+    </div>
+    <button
+      class="bg-green-500 text-white font-medium rounded-lg px-2 text-lg lg:w-full lg:text-xl hover:bg-green-300 duration-300 cursor-pointer"
+    >
+      Buscar
+    </button>
+  </div>
+
+  <div
+    class="w-full sm:max-w-md lg:max-w-sm border-2 border-gray-300 flex flex-col py-3 px-2 rounded-xl xl:py-4 xl:px-6 mx-auto"
+  >
+    <div
+      class="hidden sm:flex text-center rounded-lg bg-green-300/40 justify-center mb-3 xl:mb-4 py-1"
+    >
+      <span class="text-sm xl:text-base font-medium text-green-800">Resultados para:</span>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-y-1 sm:gap-x-4 sm:gap-y-2 w-full px-1 xl:gap-x-6 xl:gap-y-3"
+    >
+      <div
+        class="flex justify-between items-center w-full border-b border-gray-100 pb-1 sm:py-1.5 xl:py-2"
+      >
+        <div class="flex items-center gap-x-2">
+          <img src="/assets/fogo.png" alt="fogo" class="w-4 h-4 sm:w-5 sm:h-5" />
+          <h1 class="text-sm sm:text-base font-medium text-zinc-700">Calorias</h1>
+        </div>
+        <p class="text-sm sm:text-base font-bold text-zinc-800 tracking-tight">kcal</p>
+      </div>
+
+      <div
+        class="flex justify-between items-center w-full border-b border-gray-100 pb-1 sm:py-1.5 xl:py-2"
+      >
+        <div class="flex items-center gap-x-2">
+          <img src="/assets/pao.png" alt="pão" class="w-4 h-4 sm:w-5 sm:h-5" />
+          <h1 class="text-sm sm:text-base font-medium text-zinc-700">Carbo.</h1>
+        </div>
+        <p class="text-sm sm:text-base font-bold text-zinc-800">g</p>
+      </div>
+
+      <div
+        class="flex justify-between items-center w-full border-b border-gray-100 sm:border-none pb-1 sm:py-1.5 xl:py-2"
+      >
+        <div class="flex items-center gap-x-2">
+          <img src="/assets/ovo.png" alt="ovo" class="w-4 h-4 sm:w-5 sm:h-5" />
+          <h1 class="text-sm sm:text-base font-medium text-zinc-700">Proteínas</h1>
+        </div>
+        <p class="text-sm sm:text-base font-bold text-zinc-800">g</p>
+      </div>
+
+      <div class="flex justify-between items-center w-full sm:border-none py-1 sm:py-1.5 xl:py-2">
+        <div class="flex items-center gap-x-2">
+          <img src="/assets/gotaLaranja.png" alt="gota" class="w-4 h-4 sm:w-5 sm:h-5" />
+          <h1 class="text-sm sm:text-base font-medium text-zinc-700">Gorduras</h1>
+        </div>
+        <p class="text-sm sm:text-base font-bold text-zinc-800">g</p>
+      </div>
+    </div>
+  </div>
 </div>
