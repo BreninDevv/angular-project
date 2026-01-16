@@ -1,14 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { Header } from './components/header/header';
-import { Background } from './components/background/background';
-import { Card } from './components/card/card';
-import { ImcCalculator } from './features/imc-calculator/imc-calculator';
-import { NutritionalInfo } from './features/nutritional-info/nutritional-info';
 import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
+import { Home } from './pages/home/home';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Background, Card, ImcCalculator, NutritionalInfo, FormsModule],
+  standalone: true,
+  imports: [FormsModule, RouterOutlet, Home],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
