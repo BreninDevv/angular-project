@@ -12,7 +12,7 @@ export interface Alimento {
 
 @Injectable({ providedIn: 'root' })
 export class NutricaoService {
-  private readonly API_URL = 'http://localhost:4444/nutrition';
+  private readonly API_URL = 'https://angular-project-djy8.onrender.com/nutrition';
 
   constructor(private http: HttpClient) {}
 
