@@ -4,6 +4,8 @@ Este é um projeto simples desenvolvido com o objetivo de colocar em prática os
 
 ---
 
+LINK DO DEPLOY: https://angular-project-nutrition.vercel.app
+
 ## 🎯 Objetivo do Projeto
 
 O projeto foi criado com o intuito pedagógico de aprender:
